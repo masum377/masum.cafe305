@@ -1,0 +1,1070 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>MASUM | Masum Cafe</title>
+
+    <style>
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #120a06;
+            color: #fff;
+            overflow-x: hidden;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            padding: 18px 8%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+
+            background: rgba(18, 10, 6, 0.85);
+            backdrop-filter: blur(15px);
+
+            z-index: 1000;
+
+            border-bottom: 1px solid rgba(255,255,255,0.08);
+        }
+
+        .brand {
+            text-align: center;
+            line-height: 1;
+        }
+
+        .brand h2 {
+            color: #d69a5b;
+            font-size: 26px;
+            letter-spacing: 4px;
+        }
+
+        .brand span {
+            font-size: 11px;
+            letter-spacing: 2px;
+            color: #bda99a;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+            transition: 0.3s;
+        }
+
+        nav a:hover {
+            color: #d69a5b;
+        }
+
+        /* ================= HERO ================= */
+
+        .hero {
+
+            min-height: 100vh;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+
+            padding: 100px 20px;
+
+            position: relative;
+
+            background:
+                radial-gradient(
+                    circle at center,
+                    #5b321d 0%,
+                    #29150b 35%,
+                    #120a06 70%,
+                    #050302 100%
+                );
+
+        }
+
+        .coffee {
+
+            font-size: 100px;
+
+            animation:
+                floating 3s ease-in-out infinite;
+
+            filter:
+                drop-shadow(0 15px 25px rgba(0,0,0,0.5));
+
+        }
+
+        @keyframes floating {
+
+            0%,100% {
+                transform: translateY(0);
+            }
+
+            50% {
+                transform: translateY(-20px);
+            }
+
+        }
+
+        .hero h1 {
+
+            font-size: clamp(70px, 12vw, 150px);
+
+            letter-spacing: 12px;
+
+            color: #e6b276;
+
+            text-shadow:
+                0 0 20px rgba(214,154,91,0.3),
+                0 0 60px rgba(214,154,91,0.15);
+
+            margin-top: 15px;
+
+        }
+
+        .hero h2 {
+
+            font-size: 28px;
+
+            letter-spacing: 5px;
+
+            color: #fff;
+
+            margin-top: 5px;
+
+        }
+
+        .hero p {
+
+            margin-top: 20px;
+
+            color: #cbb9aa;
+
+            font-size: 18px;
+
+        }
+
+        .btn {
+
+            display: inline-block;
+
+            margin-top: 30px;
+
+            padding: 14px 30px;
+
+            border-radius: 30px;
+
+            border: none;
+
+            background: #b96f36;
+
+            color: white;
+
+            font-size: 16px;
+
+            cursor: pointer;
+
+            text-decoration: none;
+
+            transition: 0.3s;
+
+        }
+
+        .btn:hover {
+
+            transform: translateY(-5px);
+
+            background: #d28a4b;
+
+            box-shadow:
+                0 10px 30px rgba(210,138,75,0.3);
+
+        }
+
+        /* ================= SECTION ================= */
+
+        section {
+
+            padding: 90px 8%;
+
+        }
+
+        .title {
+
+            text-align: center;
+
+            margin-bottom: 50px;
+
+        }
+
+        .title h2 {
+
+            font-size: 42px;
+
+            color: #e3ae75;
+
+        }
+
+        .title p {
+
+            margin-top: 10px;
+
+            color: #a99587;
+
+        }
+
+        /* ================= MENU ================= */
+
+        .menu {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(230px, 1fr));
+
+            gap: 25px;
+
+        }
+
+        .card {
+
+            background:
+                rgba(255,255,255,0.045);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+            padding: 30px;
+
+            border-radius: 22px;
+
+            text-align: center;
+
+            transition: 0.35s;
+
+            backdrop-filter: blur(10px);
+
+        }
+
+        .card:hover {
+
+            transform: translateY(-12px);
+
+            border-color: #b96f36;
+
+            box-shadow:
+                0 20px 45px rgba(0,0,0,0.4);
+
+        }
+
+        .card .icon {
+
+            font-size: 60px;
+
+            margin-bottom: 15px;
+
+        }
+
+        .card h3 {
+
+            font-size: 24px;
+
+            margin-bottom: 10px;
+
+        }
+
+        .card p {
+
+            color: #a99587;
+
+            line-height: 1.5;
+
+            margin-bottom: 15px;
+
+        }
+
+        .price {
+
+            display: block;
+
+            color: #e3ae75;
+
+            font-size: 23px;
+
+            font-weight: bold;
+
+            margin-bottom: 15px;
+
+        }
+
+        /* ================= ORDER ================= */
+
+        .order-box {
+
+            max-width: 600px;
+
+            margin: 50px auto 0;
+
+            padding: 30px;
+
+            text-align: center;
+
+            border-radius: 22px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+            border:
+                1px solid rgba(255,255,255,0.08);
+
+        }
+
+        #orderCount {
+
+            font-size: 45px;
+
+            color: #e3ae75;
+
+            font-weight: bold;
+
+        }
+
+        #total {
+
+            font-size: 25px;
+
+            color: #d69a5b;
+
+            margin: 10px;
+
+        }
+
+        /* ================= GALLERY ================= */
+
+        .gallery {
+
+            display: grid;
+
+            grid-template-columns:
+                repeat(auto-fit, minmax(220px, 1fr));
+
+            gap: 18px;
+
+        }
+
+        .gallery-item {
+
+            height: 230px;
+
+            border-radius: 20px;
+
+            display: flex;
+
+            justify-content: center;
+
+            align-items: center;
+
+            font-size: 75px;
+
+            background:
+                linear-gradient(
+                    135deg,
+                    #63391f,
+                    #1c0d07
+                );
+
+            transition: 0.4s;
+
+        }
+
+        .gallery-item:hover {
+
+            transform:
+                scale(1.05)
+                rotate(1deg);
+
+        }
+
+        /* ================= ABOUT ================= */
+
+        .about {
+
+            max-width: 850px;
+
+            margin: auto;
+
+            text-align: center;
+
+            color: #c7b5a7;
+
+            font-size: 18px;
+
+            line-height: 1.9;
+
+        }
+
+        /* ================= REVIEW ================= */
+
+        .review {
+
+            max-width: 700px;
+
+            margin: auto;
+
+            padding: 35px;
+
+            text-align: center;
+
+            border-radius: 20px;
+
+            background:
+                rgba(255,255,255,0.05);
+
+        }
+
+        .stars {
+
+            color: #e4ad73;
+
+            font-size: 28px;
+
+            margin-bottom: 15px;
+
+        }
+
+        /* ================= CONTACT ================= */
+
+        .contact {
+
+            text-align: center;
+
+        }
+
+        .contact p {
+
+            margin: 12px;
+
+            color: #c5b2a3;
+
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+
+            padding: 30px;
+
+            text-align: center;
+
+            background: #080403;
+
+            color: #887366;
+
+        }
+
+        #clock {
+
+            margin-top: 8px;
+
+            color: #d69a5b;
+
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media(max-width:700px) {
+
+            nav {
+
+                padding: 15px 5%;
+
+            }
+
+            nav ul {
+
+                display: none;
+
+            }
+
+            .hero h1 {
+
+                font-size: 65px;
+
+                letter-spacing: 7px;
+
+            }
+
+            .hero h2 {
+
+                font-size: 20px;
+
+            }
+
+            section {
+
+                padding: 70px 5%;
+
+            }
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <nav>
+
+        <div class="brand">
+
+            <h2>MASUM</h2>
+
+            <span>Masum Cafe</span>
+
+        </div>
+
+
+        <ul>
+
+            <li>
+                <a href="#home">Home</a>
+            </li>
+
+            <li>
+                <a href="#menu">Menu</a>
+            </li>
+
+            <li>
+                <a href="#gallery">Gallery</a>
+            </li>
+
+            <li>
+                <a href="#about">About</a>
+            </li>
+
+            <li>
+                <a href="#contact">Contact</a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+
+
+    <!-- ================= HERO ================= -->
+
+    <section class="hero" id="home">
+
+        <div>
+
+            <div class="coffee">
+                ☕
+            </div>
+
+            <h1>
+                MASUM
+            </h1>
+
+            <h2>
+                Masum Cafe
+            </h2>
+
+            <p>
+                Fresh Coffee • Warm Moments • Good Memories
+            </p>
+
+            <a href="#menu" class="btn">
+                Explore Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= MENU ================= -->
+
+    <section id="menu">
+
+        <div class="title">
+
+            <h2>
+                Our Menu ☕
+            </h2>
+
+            <p>
+                Choose your favorite drink
+            </p>
+
+        </div>
+
+
+        <div class="menu">
+
+
+            <div class="card">
+
+                <div class="icon">
+                    ☕
+                </div>
+
+                <h3>
+                    Espresso
+                </h3>
+
+                <p>
+                    Strong, rich and classic.
+                </p>
+
+                <span class="price">
+                    $3.50
+                </span>
+
+                <button
+                    class="btn"
+                    onclick="addOrder(3.5)">
+
+                    Add Order
+
+                </button>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🥛
+                </div>
+
+                <h3>
+                    Cappuccino
+                </h3>
+
+                <p>
+                    Smooth coffee with creamy milk.
+                </p>
+
+                <span class="price">
+                    $4.50
+                </span>
+
+                <button
+                    class="btn"
+                    onclick="addOrder(4.5)">
+
+                    Add Order
+
+                </button>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🍫
+                </div>
+
+                <h3>
+                    Mocha
+                </h3>
+
+                <p>
+                    Chocolate and coffee together.
+                </p>
+
+                <span class="price">
+                    $5.00
+                </span>
+
+                <button
+                    class="btn"
+                    onclick="addOrder(5)">
+
+                    Add Order
+
+                </button>
+
+            </div>
+
+
+
+            <div class="card">
+
+                <div class="icon">
+                    🧊
+                </div>
+
+                <h3>
+                    Iced Coffee
+                </h3>
+
+                <p>
+                    Cold, refreshing and delicious.
+                </p>
+
+                <span class="price">
+                    $4.00
+                </span>
+
+                <button
+                    class="btn"
+                    onclick="addOrder(4)">
+
+                    Add Order
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- ORDER -->
+
+        <div class="order-box">
+
+            <h3>
+                Your Order
+            </h3>
+
+            <div id="orderCount">
+                0
+            </div>
+
+            <p>
+                Items
+            </p>
+
+            <div id="total">
+                Total: $0.00
+            </div>
+
+            <button
+                class="btn"
+                onclick="checkout()">
+
+                Place Order
+
+            </button>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= GALLERY ================= -->
+
+ <section id="gallery">
+
+    <div class="title">
+
+        <h2>
+            Gallery 📸
+        </h2>
+
+        <p>
+            A little taste of our cafe
+        </p>
+
+    </div>
+
+    <div class="gallery">
+
+        <div class="gallery-item">
+            <img src="images/coffee.jpg" alt="Coffee">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/cafe.jpg" alt="Cafe">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/cake.jpg" alt="Cake">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/dessert.jpg" alt="Dessert">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/coffee2.jpg" alt="Coffee">
+        </div>
+
+        <div class="gallery-item">
+            <img src="images/drinks.jpg" alt="Drinks">
+        </div>
+
+    </div>
+
+</section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+<section id="about">
+
+    <div class="title">
+
+        <h2>
+            About
+        </h2>
+
+    </div>
+
+    <div class="about">
+
+        <p>
+            Welcome to <b>Masum Cafe</b> —
+            a cozy place where coffee meets comfort.
+
+            We believe that a good cup of coffee
+            can make an ordinary day feel special.
+
+            From freshly brewed coffee to delicious
+            desserts, every cup is made with love.
+        </p>
+
+    </div>
+
+</section>
+
+
+
+    <!-- ================= REVIEW ================= -->
+
+    <section>
+
+        <div class="title">
+
+            <h2>
+                Customer Love ❤️
+            </h2>
+
+        </div>
+
+
+        <div class="review">
+
+            <div class="stars">
+                ★★★★★
+            </div>
+
+            <p>
+
+                "Beautiful place, amazing coffee
+                and a really relaxing atmosphere."
+
+            </p>
+
+            <br>
+
+            <strong>
+                — MASUM Cafe Customer
+            </strong>
+
+        </div>
+
+    </section>
+
+
+
+    <!-- ================= CONTACT ================= -->
+
+<section id="contact">
+
+    <div class="title">
+
+        <h2>
+            Visit ☕
+        </h2>
+
+    </div>
+
+    <div class="contact">
+
+        <p>
+            👤 Mahfujur Rahman Masum
+        </p>
+
+        <p>
+            📍 Chittagong
+        </p>
+
+        <p>
+            📞 01644423058
+        </p>
+
+        <p>
+            ✉️ mahfujurrahman377@gmail.com
+        </p>
+
+    </div>
+
+</section>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 MASUM — Masum Cafe
+        </p>
+
+        <div id="clock">
+        </div>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script>
+
+        let orderCount = 0;
+
+        let total = 0;
+
+
+        /* ADD ORDER */
+
+        function addOrder(price) {
+
+            orderCount++;
+
+            total += price;
+
+            document.getElementById("orderCount")
+                .innerText = orderCount;
+
+            document.getElementById("total")
+                .innerText =
+                "Total: $" + total.toFixed(2);
+
+        }
+
+
+        /* CHECKOUT */
+
+        function checkout() {
+
+            if (orderCount === 0) {
+
+                alert(
+                    "☕ Please add something to your order!"
+                );
+
+                return;
+
+            }
+
+
+            alert(
+
+                "🎉 Thank you for ordering from MASUM Cafe!\n\n" +
+
+                "Items: " + orderCount +
+
+                "\nTotal: $" +
+                total.toFixed(2) +
+
+                "\n\nYour coffee is being prepared ☕"
+
+            );
+
+        }
+
+
+        /* CONTACT */
+
+        function contactMessage() {
+
+            alert(
+                "☕ Thank you for contacting MASUM Cafe!"
+            );
+
+        }
+
+
+        /* LIVE CLOCK */
+
+        function updateClock() {
+
+            const now = new Date();
+
+            document.getElementById("clock")
+                .innerText =
+                "Local Time: " +
+                now.toLocaleTimeString();
+
+        }
+
+
+        setInterval(updateClock, 1000);
+
+        updateClock();
+
+
+        /* MOUSE INTERACTION */
+
+        document.addEventListener(
+            "mousemove",
+
+            function(event) {
+
+                const x =
+                    (event.clientX /
+                    window.innerWidth - 0.5) * 12;
+
+                const y =
+                    (event.clientY /
+                    window.innerHeight - 0.5) * 12;
+
+
+                document.querySelector(".coffee")
+                    .style.transform =
+                    `translate(${x}px, ${y}px)`;
+
+            }
+
+        );
+
+    </script>
+
+
+</body>
+
+</html>
